@@ -1,6 +1,6 @@
 {
   "name": "tracktask-client",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "type": "module",
   "description": "A Node client for interacting with the TrackTask API.",
   "main": "index.js",
