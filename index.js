@@ -103,6 +103,37 @@ class TrackTask {
         const json = await response.data
         return json
     }
+    async editCollection(id, name, description, shared) {
+        const response = await axios({
+            headers: {
+                'Cookie': this.session
+            },
+            data: {
+                name: name,
+                description: description,
+                shared: shared
+            },
+            url: `https://tracktask.eu.org/api/collections/${id}`,
+            method: 'PATCH'
+        })
+        const json = await response.data
+        return json
+    }
+    async newCollection(name, description) {
+        const response = await axios({
+            headers: {
+                'Cookie': this.session
+            },
+            data: {
+                name: name,
+                description: description
+            },
+            url: `https://tracktask.eu.org/api/collections`,
+            method: 'POST'
+        })
+        const json = await response.data
+        return json
+    }
     async ping() {
         const response = await axios({
             url: 'https://tracktask.eu.org/api',
