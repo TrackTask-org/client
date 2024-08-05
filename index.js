@@ -55,7 +55,7 @@ class TrackTask {
         const json = await response.data
         return json
     }
-    async editTask(id, name, description, dueDate, completed, priority ) {
+    async editTask(id, name, description, dueDate, completed, priority) {
         const response = await axios({
             headers: {
                 'Cookie': this.session
@@ -73,7 +73,7 @@ class TrackTask {
         const json = await response.data
         return json
     }
-    async newTask(name, description, dueDate, collections, completed, priority ) {
+    async newTask(name, description, dueDate, collections, completed, priority) {
         const response = await axios({
             headers: {
                 'Cookie': this.session
