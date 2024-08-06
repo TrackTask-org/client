@@ -61,11 +61,11 @@ class TrackTask {
                 'Cookie': this.session
             },
             data: {
-                name: name,
-                description: description,
-                dueDate: dueDate,
-                completed: completed,
-                priority: priority
+                name: name || undefined,
+                description: description || undefined,
+                dueDate: dueDate || undefined,
+                completed: completed || undefined,
+                priority: priority || undefined
             },
             url: `https://tracktask.eu.org/api/tasks/${id}`,
             method: 'PATCH'
@@ -79,12 +79,12 @@ class TrackTask {
                 'Cookie': this.session
             },
             data: {
-                name: name,
-                description: description,
-                dueDate: dueDate,
-                addCollections: collections,
-                completed: completed,
-                priority: priority
+                name: name || undefined,
+                description: description || undefined,
+                dueDate: dueDate || undefined,
+                addCollections: collections || undefined,
+                completed: completed || undefined,
+                priority: priority || undefined
             },
             url: `https://tracktask.eu.org/api/tasks`,
             method: 'POST'
@@ -109,9 +109,9 @@ class TrackTask {
                 'Cookie': this.session
             },
             data: {
-                name: name,
-                description: description,
-                shared: shared
+                name: name || undefined,
+                description: description || undefined,
+                shared: shared || undefined
             },
             url: `https://tracktask.eu.org/api/collections/${id}`,
             method: 'PATCH'
@@ -125,8 +125,8 @@ class TrackTask {
                 'Cookie': this.session
             },
             data: {
-                name: name,
-                description: description
+                name: name || undefined,
+                description: description || undefined
             },
             url: `https://tracktask.eu.org/api/collections`,
             method: 'POST'
