@@ -67,7 +67,7 @@ class TrackTask {
                 completed: completed || undefined,
                 priority: priority || undefined
             },
-            url: `https://tracktask.eu.org/api/tasks/${id}`,
+            url: `https://tracktask.eu.org/api/tasks/${id || undefined}`,
             method: 'PATCH'
         })
         const json = await response.data
@@ -88,6 +88,17 @@ class TrackTask {
             },
             url: `https://tracktask.eu.org/api/tasks`,
             method: 'POST'
+        })
+        const json = await response.data
+        return json
+    }
+    async deleteTask(id) {
+        const response = await axios({
+            headers: {
+                'Cookie': this.session
+            },
+            url: `https://tracktask.eu.org/api/tasks${id || undefined}`,
+            method: 'DELETE'
         })
         const json = await response.data
         return json
@@ -113,7 +124,7 @@ class TrackTask {
                 description: description || undefined,
                 shared: shared || undefined
             },
-            url: `https://tracktask.eu.org/api/collections/${id}`,
+            url: `https://tracktask.eu.org/api/collections/${id || undefined}`,
             method: 'PATCH'
         })
         const json = await response.data
@@ -130,6 +141,17 @@ class TrackTask {
             },
             url: `https://tracktask.eu.org/api/collections`,
             method: 'POST'
+        })
+        const json = await response.data
+        return json
+    }
+    async deleteCollection(id) {
+        const response = await axios({
+            headers: {
+                'Cookie': this.session
+            },
+            url: `https://tracktask.eu.org/api/collections${id || undefined}`,
+            method: 'DELETE'
         })
         const json = await response.data
         return json
