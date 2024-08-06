@@ -48,6 +48,8 @@ class TrackTask {
         const json = await response.data
         return json
     }
+    // to-do: edit user
+    // to-do: delete user
     async getTasks(id) {
         const response = await axios({
             headers: {
@@ -160,6 +162,8 @@ class TrackTask {
         const json = await response.data
         return json
     }
+    // to-do: add or remove task from collections
+    // to-do: share collection
     async ping() {
         const response = await axios({
             url: 'https://tracktask.eu.org/api',
