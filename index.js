@@ -97,7 +97,7 @@ class TrackTask {
             headers: {
                 'Cookie': this.session
             },
-            url: `https://tracktask.eu.org/api/tasks${id || undefined}`,
+            url: `https://tracktask.eu.org/api/tasks/${id || undefined}`,
             method: 'DELETE'
         })
         const json = await response.data
@@ -150,7 +150,7 @@ class TrackTask {
             headers: {
                 'Cookie': this.session
             },
-            url: `https://tracktask.eu.org/api/collections${id || undefined}`,
+            url: `https://tracktask.eu.org/api/collections/${id || undefined}`,
             method: 'DELETE'
         })
         const json = await response.data
