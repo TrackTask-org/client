@@ -1,5 +1,9 @@
 import axios from 'axios'
 
+function required(param) {
+    throw new Error(`${param} is a required parameter!`);
+}
+
 class TrackTask {
     constructor(username, password) {
         this.username = username
@@ -55,7 +59,7 @@ class TrackTask {
         const json = await response.data
         return json
     }
-    async editTask(id, name, description, dueDate, completed, priority) {
+    async editTask(id=required("id"), name, description, dueDate, completed, priority) {
         const response = await axios({
             headers: {
                 'Cookie': this.session
@@ -73,7 +77,7 @@ class TrackTask {
         const json = await response.data
         return json
     }
-    async newTask(name, description, dueDate, collections, completed, priority) {
+    async newTask(name=required("name"), description, dueDate, collections, completed, priority) {
         const response = await axios({
             headers: {
                 'Cookie': this.session
@@ -92,7 +96,7 @@ class TrackTask {
         const json = await response.data
         return json
     }
-    async deleteTask(id) {
+    async deleteTask(id=required("id")) {
         const response = await axios({
             headers: {
                 'Cookie': this.session
@@ -114,7 +118,7 @@ class TrackTask {
         const json = await response.data
         return json
     }
-    async editCollection(id, name, description, shared) {
+    async editCollection(id=required("id"), name, description, shared) {
         const response = await axios({
             headers: {
                 'Cookie': this.session
@@ -130,7 +134,7 @@ class TrackTask {
         const json = await response.data
         return json
     }
-    async newCollection(name, description) {
+    async newCollection(name=required("name"), description) {
         const response = await axios({
             headers: {
                 'Cookie': this.session
@@ -145,7 +149,7 @@ class TrackTask {
         const json = await response.data
         return json
     }
-    async deleteCollection(id) {
+    async deleteCollection(id=required("id")) {
         const response = await axios({
             headers: {
                 'Cookie': this.session
